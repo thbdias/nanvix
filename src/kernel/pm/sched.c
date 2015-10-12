@@ -94,18 +94,24 @@ PUBLIC void yield(void)
 		 * Process with higher
 		 * waiting time found.
 		 */
-		if (p->counter > next->counter)
+		/*if (p->counter > next->counter)
 		{
 			next->counter++;
 			next = p;
-		}
-			
+		} */
+		
 		/*
 		 * Increment waiting
 		 * time of process.
 		 */
-		else
-			p->counter++;
+		/*else
+			p->counter++; */
+			
+		if (p->priority < next->priority)
+		{
+			next = p;
+		}
+			
 	}
 	
 	/* Switch to next process. */
